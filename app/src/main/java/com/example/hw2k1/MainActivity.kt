@@ -1,11 +1,8 @@
 package com.example.hw2k1
 
-import android.R.attr
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
@@ -13,14 +10,11 @@ import com.example.hw2k1.databinding.ActivityMainBinding
 import com.example.hw2k1.extensions.load
 import com.example.hw2k1.extensions.random
 import com.example.hw2k1.extensions.showToast
-import java.io.FileNotFoundException
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val images = arrayListOf<String>()
-    private lateinit var buffer: Bitmap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRandom.setOnClickListener {
             try {
-                binding.imageView.load(images[random(images.size)].toString())
+                binding.imageView.load(images[random(images.size)])
             } catch (e: IllegalArgumentException) {
                 showToast("Submit an image")
             }

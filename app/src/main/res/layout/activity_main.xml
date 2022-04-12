@@ -8,42 +8,45 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/image_view"
-            tools:src="@drawable/ic_launcher_background"
             android:layout_width="250dp"
-            android:layout_height="250dp" />
+            android:layout_height="250dp"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_launcher_background" />
 
         <Button
             android:id="@+id/btn_random"
-            android:text="@string/random_picture"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/random_picture" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/submit_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/submit_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edit_text"
-        app:layout_constraintBottom_toTopOf="@id/btn_submit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        app:layout_constraintBottom_toTopOf="@id/btn_submit"
+        tools:ignore="LabelFor,TextFields" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
